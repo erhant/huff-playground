@@ -28,12 +28,12 @@ Click "Use this template" on [GitHub](https://github.com/huff-language/huff-proj
 
 Or run:
 
-```
+```bash
 git clone https://github.com/huff-language/huff-project-template
 cd huff-project-template
 ```
 
-2. Install dependencies
+1. Install dependencies
 
 Once you've cloned and entered into your repository, you need to install the necessary dependencies. In order to do so, simply run:
 
@@ -41,7 +41,7 @@ Once you've cloned and entered into your repository, you need to install the nec
 forge install
 ```
 
-3. Build & Test
+1. Build & Test
 
 To build and test your contracts, you can run:
 

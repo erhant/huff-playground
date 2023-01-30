@@ -11,7 +11,7 @@ contract SimpleStoreTest is Test {
 
   /// @dev Setup the testing environment.
   function setUp() public {
-    simpleStore = SimpleStore(HuffDeployer.deploy("SimpleStore"));
+    simpleStore = SimpleStore(HuffDeployer.deploy("simple/SimpleStore"));
   }
 
   /// @dev Ensure that you can set and get the value.
@@ -24,6 +24,7 @@ contract SimpleStoreTest is Test {
 }
 
 interface SimpleStore {
-  function setValue(uint256) external; 
+  function setValue(uint256) external;
+
   function getValue() external returns (uint256);
 }

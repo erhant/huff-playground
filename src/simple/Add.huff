@@ -1,0 +1,20 @@
+/// @notice Simple Addition Contract
+/// @notice https://docs.huff.sh/get-started/compiling/#compiling-contracts-with-the-huff-compiler
+
+// define function for the ABI
+#define function add(uint256,uint256) nonpayable returns (uint256)
+
+// define main logic
+#define macro MAIN() = {
+  // load two numbers from calldata
+  // notice we skip 4 bytes
+  0x04 calldataload // [n]
+  0x24 calldataload // [m]
+
+  // just call add :)
+  add               // [n+m]
+
+  // return the result
+  0x00 mstore // store result in memory
+  0x20 0x00 return // return from slot 0
+}

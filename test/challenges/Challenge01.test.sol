@@ -8,12 +8,10 @@ import "forge-std/console.sol";
 contract Challenge01Test is Test {
   Challenge01 target;
 
-  /// @dev Setup the testing environment.
   function setUp() public {
     target = Challenge01(HuffDeployer.deploy("challenges/Challenge01"));
   }
 
-  /// @dev Ensure that you can set and get the value.
   function testChallenge() public {
     assertEq(target.call(), block.number);
   }

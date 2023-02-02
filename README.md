@@ -15,3 +15,4 @@ For more Huffing, see:
 - `forge install` will install required packages.
 - `forge build` will compile the Huff code under `src` folder.
 - `forge test` will run tests under `test` folder.
+  - `--match-contract <contract-name>` option will run test contracts with the matching names.

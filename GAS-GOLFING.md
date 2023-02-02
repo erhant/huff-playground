@@ -1,6 +1,6 @@
 # Gas Golfing
 
-In this file, I plan to collect some gas optimization tricks. These are mostly at Huff-level or Yul-level, rather than Solidity-level.
+In this file, I plan to collect some gas optimization tricks that I have come accross. These are mostly at Huff-level or Yul-level, rather than Solidity-level. Note that there are much better collections out there, such as <https://github.com/kadenzipfel/gas-optimizations>.
 
 - **Pushing a Zero**: Normally you can write `0x0` in Huff, which will translate into `PUSH1 0x0`, costing 3 gas via PUSH1. However, if you have not called any external function so far, `RETURNDATASIZE` will result in `0x0` too, and it only costs 2 gas.
 

@@ -1,5 +1,5 @@
 /// @notice Challenge #3
-/// @notice https://twitter.com/huff_language/status/1560015751989211136?s=20&t=SpRivH1edFMIujAQYc26zQ
+/// @notice https://twitter.com/huff_language/status/1560750533811376128?s=20&t=MWz5PzwPRra8o_B7d14QSw
 /// @notice Exploit this contract and steal the Ether inside. It's deployed at `0xae7e201257f3f7918e9e8f2f3de998e3d75f7a1d` and has 0.1 ETH for you
 /// @notice Interface: deposit(), withdraw(), and setWithdrawer(address)
 

@@ -10,7 +10,7 @@ contract Challenge03Test is Test {
 
   function setUp() public {
     target = Challenge03(HuffDeployer.deploy("challenges/Challenge03"));
-    target.withdraw();
+    // target.withdraw();
 
     // send funds
     target.deposit{value: 0.1 ether}();
@@ -27,7 +27,7 @@ contract Challenge03Test is Test {
     target.deposit{value: 1}();
 
     // override owner
-    target.set_withdrawer{value: 2}(address(this));
+    target.setWithdrawer{value: 2}(address(this));
     // address owner = stdStorage.read(2);
     // assertEq(owner, address(this));
 
@@ -38,9 +38,7 @@ contract Challenge03Test is Test {
     assertEq(address(target).balance, 0);
   }
 
-  receive() external payable {
-    console.log("bom");
-  }
+  receive() external payable {}
 
   fallback() external payable {}
 }
@@ -50,5 +48,5 @@ interface Challenge03 {
 
   function withdraw() external;
 
-  function set_withdrawer(address) external payable;
+  function setWithdrawer(address) external payable;
 }

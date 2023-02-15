@@ -4,10 +4,10 @@
 /// @dev Input is given at the first position in calldata
 
 #define macro MAIN() = {
-  0x00 calldataload // [n]
+  returndatasize calldataload // [n]
   0x01 and iszero   // [(n & 1 == 0)]
 
-  0x00 mstore
-  calldatasize 0x00 return
+  returndatasize mstore
+  calldatasize returndatasize return
   
 }

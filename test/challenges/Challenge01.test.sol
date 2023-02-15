@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.15;
 
-import "foundry-huff/HuffDeployer.sol";
-import "forge-std/Test.sol";
-import "forge-std/console.sol";
+import {HuffDeployer} from "foundry-huff/HuffDeployer.sol";
+import {Test} from "forge-std/Test.sol";
 
 contract Challenge01Test is Test {
   Challenge01 target;

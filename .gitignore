@@ -20,3 +20,6 @@ flattened.txt
 
 # Ignore Broadcasts
 broadcast
+
+# secret sauce
+src/ignore

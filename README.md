@@ -12,7 +12,13 @@ For more Huffing, see:
 
 ## Usage
 
+The intended way to use this repository is to use `forge` commands:
+
 - `forge install` will install required packages.
 - `forge build` will compile the Huff code under `src` folder.
 - `forge test` will run tests under `test` folder.
   - `--match-contract <contract-name>` option will run test contracts with the matching names.
+
+You can also use Huff compiler directly:
+
+- `huffc <path> -a` will output

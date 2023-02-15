@@ -4,6 +4,6 @@
 
 #define macro MAIN() = {
   number // get block number
-  0x00 mstore // store result, you could also use 0x00
-  0x20 0x00 return // return
+  returndatasize mstore // store result, you could also use 0x00
+  0x20 returndatasize return // return
 }
